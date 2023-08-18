@@ -169,12 +169,14 @@ thead {
 
 .champ {
     border: 0;
-    border-bottom: 2px Solid #10b3b9;
+    border-color: #b91010;
+    border-bottom: 2px Solid #b91010;
     margin-bottom: 20px;
 }
 
 form label {
-    color: #10b3b9;
+    color: black;
+    font-weight: bold;
 }
 
 .foot {

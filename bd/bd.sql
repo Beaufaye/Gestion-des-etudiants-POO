@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  18/08/2023 14:50:43                      */
+/* Date de crï¿½ation :  18/08/2023 14:50:43                      */
 /*==============================================================*/
 
 
@@ -17,7 +17,7 @@ drop table if exists utilisateur;
 /*==============================================================*/
 create table compte
 (
-   id_compte            int not null,
+   id_compte            int not null AUTO_INCREMENT,
    username             varchar(254),
    password             varchar(254),
    primary key (id_compte)
@@ -28,7 +28,7 @@ create table compte
 /*==============================================================*/
 create table etudiant
 (
-   id_etudiant          int not null,
+   id_etudiant          int not null AUTO_INCREMENT,
    nom                  varchar(254),
    prenom               varchar(254),
    date_de_naissance    datetime,
@@ -46,7 +46,7 @@ create table etudiant
 /*==============================================================*/
 create table role
 (
-   id_role              int not null,
+   id_role              int not null AUTO_INCREMENT,
    id_utilisateur       int not null,
    type_de_role         varchar(254),
    primary key (id_role)
@@ -57,7 +57,7 @@ create table role
 /*==============================================================*/
 create table utilisateur
 (
-   id_utilisateur       int not null,
+   id_utilisateur       int not null AUTO_INCREMENT,
    id_compte            int not null,
    nom                  varchar(254),
    prenom               varchar(254),
