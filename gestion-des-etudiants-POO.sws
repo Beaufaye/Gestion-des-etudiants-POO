@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{B04F3CFE-7562-4352-BF4E-24D76498C8C2}" Name="Définition de cas d&#39;utilisation_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../Définition de cas d&#39;utilisation.moo"/>
+		<Model Expanded="Yes" ID="{9C7A6C74-5F8A-47D3-80ED-C3AFD03F2647}" Name="Diagramme de séquence UML_1" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../Diagramme de séquence UML_1 lister etudiant.moo"/>
+		<Model Expanded="Yes" ID="{B04F3CFE-7562-4352-BF4E-24D76498C8C2}" Loaded="No" Name="Définition de cas d&#39;utilisation_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Définition de cas d&#39;utilisation.moo"/>
+		<Model Expanded="Yes" ID="{9C7A6C74-5F8A-47D3-80ED-C3AFD03F2647}" Loaded="No" Name="Diagramme de séquence UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Diagramme de séquence UML_1 lister etudiant.moo"/>
+		<Model Expanded="Yes" ID="{9C7A6C74-5F8A-47D3-80ED-C3AFD03F2647}" Loaded="No" Name="Diagramme de séquence UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Diagramme de séquence UML_1 lister etudiant.moo"/>
+		<Model Expanded="Yes" ID="{B6A9B86F-827C-42F4-BBED-C774DEB4F2D3}" Loaded="No" Name="Diagramme de séquence UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Diagramme de séquence UML_2 ajouter utilisateur.moo"/>
+		<Model Expanded="Yes" ID="{ECB6B94B-D26A-456A-9922-D65C75BD652C}" Loaded="No" Name="Diagramme de séquence UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Diagramme de séquence UML_3.moo"/>
+		<Model Expanded="Yes" ID="{ECB6B94B-D26A-456A-9922-D65C75BD652C}" Loaded="No" Name="Diagramme de séquence UML_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../Diagramme de séquence UML_3.moo"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>
