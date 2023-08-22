@@ -48,7 +48,6 @@
                 </div>
                 <div class="page">
                     
-              ------------stevie formulaire 
                 <div class="m-5 bg-danger">
                 <form action="insertion_apprenants.php" method="post" class="row p-3">
                 <div class="col-md-6">

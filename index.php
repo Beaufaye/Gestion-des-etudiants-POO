@@ -43,9 +43,9 @@ if (isset($_POST["username"]) AND isset($_POST["password"])) {
                 </div>
             </form>
             </div>
-            <div class="left bg-danger">
-                 <h2 class="text-light"> BIENVENUE DANS GETUD </h2>
-                 <h3 class="text-warning"> Une plateforme de Gestion des étudiants de l'Université Thomas SANKARA </h3>
+            <div class="left bg-image" style="background-image: url(./font/images/ge1.png)">
+                 <h2 class="text-danger"> BIENVENUE DANS GETUD </h2>
+                 <h3 class="text-dark"> Une plateforme de Gestion des étudiants de l'Université Thomas SANKARA </h3>
             </div>
    </body>
    
