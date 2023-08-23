@@ -37,26 +37,32 @@
             <div class="bienvenu">BIENVENUE DANS GETUD</div>
             <div class="global-content">
                 <div class="contenu">
-                    <aside class="d-flex flex-column p-3">
-                        <h3 id="navig">Menu navigation</h3>
-                        <h3 class="btn btn-info p-3 m-1"> <a class="text-light h-100 w-100" href="voir/liste_etudiant.php"> LISTE DES ETUDIANTS </a> </h3>
-                        <h3 class="btn btn-info p-3 m-1"> <a class="text-light h-100 w-100" href=".php"> GERER ETUDIANTS </a></h3>
-                        <h3 class="btn btn-info p-3 m-1"> <a class="text-light h-100 w-100" href=".php"> PERSONNELS </a></h3>
-                        
-                    </aside>
+                    <aside class="d-flex flex-column p-3 ">
+                        <h3 id="navig" class="text-light">Menu navigation</h3>
+                        <h3 class="btn btn-warning p-3 m-1"> <a class="text-light h-100 w-100" href="voir/liste_etudiant.php"> LISTE DES ETUDIANTS </a> </h3>
+                        <h3 class="btn btn-warning p-3 m-1"> <a class="text-light h-100 w-100" href="gestionetud.php"> GERER ETUDIANTS </a></h3>
+                        <h3 class="btn btn-warning p-3 m-1"> <a class="text-light h-100 w-100" href="filiere.php"> FILIERES </a></h3>
+                     </aside>
 
                 </div>
-        <div class="page">
-            <div class=" bg-white">
+                
+                <div class="page">
                     
+
+                </div>
+
+        
+                
+
             </div>
-        </div>
-            </div>
-            <?php
-            include('footer.php');
-            ?>
-        </div>
 
     </body>
+
+                
+        
+            
+     
+
+    
 
     </html>

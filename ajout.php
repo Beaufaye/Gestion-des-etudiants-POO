@@ -1,138 +1,94 @@
 <?php
-    session_start();
-    $user = $_SESSION["user"];
-    ?>
-    <!DOCTYPE html>
-    <html lang="fr">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="font/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="font/font-awesome/css/font-awesome.min.css">
-        <script type="text/javascript" src="font/js/jquery/jquery.js"></script>
-        <link rel="stylesheet" type="text/css" href="font/css/style.css">
-        <title>Acceuil</title>
-    </head>
-
-    <body>
-
-        <div class="container" id="container">
-            <div class="container" id="banniere">
-                <div class="div-1">
-                    <img src="font/images/logo armoirie bf.jpg" alt="logo de gauche" class="logo">
-                </div>
-                <div class="welcom">
-                    <p>GESTIONS DES ETUDIANTS</p>
-                </div>
-
-                <div class="div-2">
-                
-                <button class="btn btn-info"> <a class="text-light" href="index.php"> Deconnexion </a> </button>
-                </div>
-            </div>
-
-           
-
-            <div class="bienvenu">BIENVENUE DANS GETUD</div>
-            <div class="global-content">
-                <div class="contenu">
-                    <aside class="d-flex flex-column p-3">
-                        <h3 id="navig">Menu navigation</h3>
-                        <h3 class="btn btn-info p-3 m-1"> <a class="text-light h-100 w-100" href="voir/liste_etudiant.php"> LISTE DES ETUDIANTS </a> </h3>
-                        <h3 class="btn btn-info p-3 m-1"> <a class="text-light h-100 w-100" href=".php"> GERER ETUDIANTS </a></h3>
-                        <h3 class="btn btn-info p-3 m-1"> <a class="text-light h-100 w-100" href=".php"> PERSONNELS </a></h3>
-                        
-                    </aside>
-
-                </div>
-                <div class="page">
-                    
-                <div class="m-5 bg-danger">
-                <form action="insertion_apprenants.php" method="post" class="row p-3">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label text-light">Nom</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Entrer le nom" name="nom" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label text-light">Prénom</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="Entrer le prénom" name="prenom" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="inputAddress" class="form-label text-light">Date de naissance</label>
-                    <input type="date" class="form-control" id="inputAddress" name="date_naiss" required>
-                </div>
-                <div class="col-6">
-                    <label for="inputAddress2" class="form-label text-light">Sexe</label>
-                    <select id="inputState" class="form-select" name="sexe" required>
-                        <option selected>Choisissez..</option>
-                        <option>Masculin</option>
-                        <option>Feminin</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label text-light">Tuteur</label>
-                    <?php              
-              $bdd= new PDO('mysql:host=localhost;dbname=annuaire','root','');
-
-              $reponse = $bdd->query('SELECT nom, prenom FROM tuteur');
+            include('connexion.php');
             ?>
-                <select name="tuteur" id="inputState" class="form-select">
-                    
-                    <?php while ($d = $reponse->fetch()) { ?>
+<?php
+            include('menu.php');
+            ?>
+ <?php
+      $bd=bd();
+      $etudMan=new etudiantM($bd);
+      $service=new filiereM($bd);
+      $list=$service->liste();
+      if(isset($_POST['id_etudiant']) and $_POST['id_filiere'] and $_POST['id_niveau'] 
+      and $_POST['nom'] and $_POST['prenom'] and $_POST['date_de_naissance'] and $_POST['nationalité']
+       and $_POST['adresse'] and $_POST['sexe'] and $_POST['contact'] and $_POST['filiere'])
 
-                    <option><?= $d['nom'] ?> <?= $d['prenom'] ?></option>
-                    <?php } ?>
-                </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label text-light">Ville</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="Entrer la ville" name="ville" required>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label text-light" >Contact</label>
-                    <input type="number" class="form-control" id="inputZip" placeholder="Entrer le contact" name="contact" required>
-                </div>
-                <div class="col-12">
-                  
-                </div>
-                <div class="col-12 mt-3">
-                    <button type="submit" class="btn btn-dark" id="sendapprenants" type="submit" value="Ajouter" name="ajouter" onclick='return confirmation()'>Enregistrer</button>
-                    <button type="submit" class="btn btn-light" id="annuler" type="" value="Annuler" name="annuler">Annuler</button>
-                </div>
-         
+    {
+        $etudMan =new etudiantM($bd);
+        $etud=new etudiant($_POST);
+        $etudMan->add($pers);
+        header("location: liste_etudiant.php");
+    }
+?>
 
-            
-        </form>
+<!DOCTYPE html>
+<html lang="fr">
+<?php
+  include('menu.php');
+?>
+<body>
+
+    <div class="container" id="container">
+     
+    <div class="mt-3 pull-right d-flex">  
+        <i class="fa fa-user mr-3 user"> <span class="ml-2"> <?= $user["statut"];?> </span> </i>
+        <button class="btn btn-info"> <a class="text-light" href="../../index.php"> Deconnexion </a> </button>
     </div>
 
+        <div class="bienvenu">INSERTION D'UN AGENT</div>
+      <div class="global-content">
+        <div class="contenu">
+        <?php
+             include('../../include/aside.php');
+        ?>
+        </div>
+            <div class="cache">
+                <div class="c-table">
+                    <p style="color: red;">Veuillez remplir les champs * </p>
 
-    <script type="text/javascript" src="js/navigateur.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/details.js"></script>
+            <form class=" form p-4 d-flex flex-column w-100" action="ajout.php" method="POST" enctype="multipart/form-data">
+                <label for="">Nom</label>
+                <input type="text" class="champ" name="nom">
+                <label for="">Prenom</label>      
+                <input type="text" class="champ" name="prenom" required>
+                <label for="">Date de Naissance</label>   
+                <input type="date" class="champ" name="date_de_naissance" required>
+                <label for="">nationalité</label>   
+                <input type="text" class="champ" name="nationalité" required> 
+                <label for="">adresse</label>   
+                <input type="text" class="champ" name="Categorie">
+                <label for="">sexe</label>   
+                <input type="text" class="champ" name="sexe">
+                <label for="">contact</label>   
+                <input type="text" class="champ" name="contact">
+                <label for="">Filiere</label>
+                <select class="champ" name="filiere">
+                  <?php
+                    foreach($list as $key){
+                  ?> 
+                    <option value="<?php echo $key->nom ?>"><?php echo $key->nom?></option>;
+                  <?php
+                  }
+                  ?>
+                </select>  
+                <label for="">Niveau</label>   
+                <select name="niveau" id=""><option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option></select>
 
-
-
-    <script>
-    function confirmation() {
-        return confirm('Voulez-vous enregistrer cet apprenant?');
-    }
-    </script>
-
-
-
-    <script type="text/javascript">
-    afficher('formulaire');
-    </script>
-
-
+                <div class="panel-footer mt-3">
+                    <button type="submit" class="btn btn-info pull-left mr-3">Enregistrer <i class="fa fa-check-square-o ml-2"></i> </button>
+                    <button type="button" class="btn btn-info pull-left"> <a class="text-light" href="list.php"> Fermer <i class="fa fa-close"></i> </a></button>
+                </div>
+            </form>
                 </div>
             </div>
-            <?php
+      </div>
+       <?php
             include('footer.php');
             ?>
-        </div>
-
-    </body>
-
-    </html>
+ 
+    </div>
+    
+</body>
+</html>
