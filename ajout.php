@@ -1,10 +1,9 @@
 <?php
-            include('connexion.php');
-            ?>
-<?php
-            include('menu.php');
-            ?>
- <?php
+    include('connexion.php');
+    
+    include('menu.php');
+
+ 
       $bd=bd();
       $etudMan=new etudiantM($bd);
       $service=new filiereM($bd);
