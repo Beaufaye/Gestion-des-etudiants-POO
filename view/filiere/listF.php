@@ -40,7 +40,7 @@ include('../../include/head.php');
       <button class="btn btn-info"> <a class="text-light" href="../../index.php"> Deconnexion </a> </button>
     </div>
 
-    <div class="bienvenu">LISTE DES ETUDIANTS</div>
+    <div class="bienvenu">LISTE DES FILIERES</div>
     <div class="global-content">
       <div class="contenu">
         <?php

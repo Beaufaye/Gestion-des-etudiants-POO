@@ -13,20 +13,17 @@ class EtudiantManager
 
    public function add(Etudiant $etud)
    {
-     $sql=$this->_db->prepare("INSERT INTO etudiant(id_etudiant, nom, prenom, date_de_naissance, nationalite, adresse, sexe, contact, filiere, niveau) 
-     VALUES(:id_etudiant, :nom, :prenom, :date_de_naissance, :nationalite, :adresse, :sexe, :contact, :filiere, :niveau)");
-     $sql->execute(array(
+     $sql=$this->_db->prepare("INSERT INTO etudiant(id_etudiant, nom, prenom, date_de_naissance, nationalite, sexe, contact, filiere, niveau) 
+     VALUES(:id_etudiant, :nom, :prenom, :date_de_naissance, :nationalite, :filiere, :niveau)");
+     $sql->execute([
       "id_etudiant"=>$etud->id_etudiant,
       "nom"=>$etud->nom,
       "prenom"=>$etud->prenom,
       "date_de_naissance"=>$etud->date_de_naissance,
       "nationalite"=>$etud->nationalite,
-      "adresse"=>$etud->adresse,
-      "sexe"=>$etud->sexe,
-      "contact"=>$etud->contact,
       "filiere"=>$etud->filiere,
       "niveau"=>$etud->niveau
-    ));
+    ]);
    }
 
    public function get($id_etudiant)

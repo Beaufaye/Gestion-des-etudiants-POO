@@ -7,16 +7,22 @@ require_once ("../../connexion.php");
 require_once ("../../autoload.php");
 
 $bd=bd();
-$etuManager=new EtudiantManager($bd);
+
 $filiere=new FiliereManager($bd);
 $list=$filiere->liste();
+
+$etuManager=new EtudiantManager($bd);
+
+
+
 if(isset($_POST['id_etudiant']) and $_POST['nom'] and $_POST['prenom'] and $_POST['date_de_naissance'] and $_POST['nationalite']
-and $_POST['adresse'] and $_POST['sexe'] and $_POST['contact'] and $_POST['filiere'] and $_POST['niveau'])
+ and $_POST['filiere'] and $_POST['niveau'])
 
 {
     $etuManager =new EtudiantManager($bd);
     $etu=new Etudiant($_POST);
     $etuManager->add($etu);
+
     header("location: list.php");
 }
 ?>
@@ -59,9 +65,11 @@ and $_POST['adresse'] and $_POST['sexe'] and $_POST['contact'] and $_POST['filie
                             <input type="text" class="form-control"  placeholder="Entrer le prénom"
                                 name="prenom" required>
                         </div>
+
                         <div class="col-md-12">
-                            <label for="date_naissance" class="form-label text-light">Date de naissance</label>
-                            <input type="date" class="form-control"  name="date_de_naissance" required>
+                            <label for="prenom" class="form-label text-light">Date de Naissance</label>
+                            <input type="date" class="form-control" 
+                                name="prenom" required>
                         </div>
 
                         <div class="col-md-12">
@@ -269,42 +277,41 @@ and $_POST['adresse'] and $_POST['sexe'] and $_POST['contact'] and $_POST['filie
                         </div>
 
                         <div class="col-md-12">
-                            <label for="adresse" class="form-label text-light">Adresse</label>
-                            <input type="text" class="form-control"  placeholder="Entrer l'Adresse"
-                                name="adresse" required>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="sexe" class="form-label text-light">Sexe</label>
-                            <select  class="form-control" name="sexe" required>
-                                <option selected>Choisissez..</option>
-                                <option>Masculin</option>
-                                <option>Feminin</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="contact" class="form-label text-light">Contact</label>
-                            <input type="text" class="form-control"  placeholder="Entrer le contact"
-                                name="contact" required>
-                        </div>
-
-                        <div class="col-md-12">
                             <label for="inputfiliere" class="form-label text-light">Filière</label>
-                            <?php              
-              $bdd= new PDO('mysql:host=localhost;dbname=getud','root','');
-
-              $reponse = $bdd->query('SELECT nom_filiere FROM filiere');
-            ?>
-                            <select name="filiere"  class="form-control">
-
-                                <?php while ($d = $reponse->fetch()) { ?>
-
-                                <option><?= $d['nom_filiere'] ?></option>
-                                <?php } ?>
-                            </select>
+                             <select name="filiere" class="form-control">
+                                <option value="">Choisissez</option>
+                        <?php
+                            foreach ($list as $key) {
+                             
+                        ?>
+                        <option value="<?php echo $key->nom_filiere ?>"></option>;
+                         <?php
+                          }
+                          ?>
+                             </select>         
+              
                             
                         </div>
+
+
+                        <div class="col-md-12">
+                            <label for="v" class="form-label text-light">Niveau</label>
+                             <select name="niveau" class="form-control">
+                                <option value="">Choisissez</option>
+                        <?php
+                            foreach ($list as $key) {
+                             
+                        ?>
+                        <option value="<?php echo $key->valeur ?>"></option>;
+                         <?php
+                          }
+                          ?>
+                             </select>         
+              
+                            
+                        </div>
+
+                        
 
                         <div class="panel-footer mt-3">
                     <button type="submit" class="btn btn-info pull-left mr-3" >Enregistrer <i class="fa fa-check-square-o ml-2"></i> </button>

@@ -57,9 +57,6 @@ include('../../include/head.php');
                 <th scope="col">Prénom</th>
                 <th scope="col">Date de naissance</th>
                 <th scope="col">Nationalité</th>
-                <th scope="col">Adresse</th>
-                <th scope="col">Sexe</th>
-                <th scope="col">Contact</th>
                 <th scope="col">Filière</th>
                 <th scope="col">Niveau</th>
               </tr>
@@ -86,9 +83,6 @@ include('../../include/head.php');
                     echo "<td> $donnees[prenom] </td>";
                     echo "<td> $donnees[date_de_naissance] </td>";
                     echo "<td> $donnees[nationalite] </td>";
-                    echo "<td> $donnees[adresse] </td>";
-                    echo "<td> $donnees[sexe] </td>";
-                    echo "<td> $donnees[contact] </td>";
                     echo "<td> $donnees[filiere] </td>";
                     echo "<td> $donnees[niveau] </td>";
                     echo "</tr>";

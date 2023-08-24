@@ -38,6 +38,9 @@
 
             <div class="bienvenu">BIENVENUE DANS GETUD</div>
             <div class="global-content">
+            <div class="page ">
+                    <img src="font/images/logo univ.jpg" alt="logo de droit" class="minifed">
+                </div>
                 <div class="contenu">
                     <aside class="d-flex flex-column p-3">
                         <h3 id="navig">Menu navigation</h3>
@@ -46,9 +49,7 @@
                     </aside>
 
                 </div>
-                <div class="page">
-                    <img src="font/images/logo univ.jpg" alt="logo de droit" class="minifed">
-                </div>
+                
             </div>
             <?php
             include('include/footer.php');

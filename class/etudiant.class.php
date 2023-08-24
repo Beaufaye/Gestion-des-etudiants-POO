@@ -7,9 +7,6 @@ class Etudiant
   private $prenom;
   private $date_de_naissance;
   private $nationalite;
-  private $adresse;
-  private $sexe;
-  private $contact;
   private $filiere;
   private $niveau;
   
