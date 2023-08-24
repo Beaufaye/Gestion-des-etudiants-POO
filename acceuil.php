@@ -47,7 +47,6 @@
                         <h3 class="btn btn-danger p-3 m-1"> <a class="text-light h-100 w-100" href="view/etudiant/list.php"> ETUDIANTS </a></h3>
                         <h3 class="btn btn-danger p-3 m-1"> <a class="text-light h-100 w-100" href="view/filiere/listF.php"> FILIERE </a></h3>
                     </aside>
-
                 </div>
                 
             </div>

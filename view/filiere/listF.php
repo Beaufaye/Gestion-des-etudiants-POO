@@ -36,24 +36,17 @@ include('../../include/head.php');
     include('../../include/header.php');
     ?>
 
-    <div class="mt-3 pull-right d-flex">
-      <button class="btn btn-info"> <a class="text-light" href="../../index.php"> Deconnexion </a> </button>
-    </div>
+    
 
     <div class="bienvenu">LISTE DES FILIERES</div>
     <div class="global-content">
-      <div class="contenu">
-        <?php
-        include('../../include/aside.php');
-        ?>
-      </div>
       <div class="cache">
         <div class="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
-              <tr>
-              <th scope="col">N°</th>
-                <th scope="col">Nom</th>
+              <tr class="bg-danger">
+              <th scope="col" class="text-light">N°</th>
+                <th scope="col" class="text-light">Nom</th>
             </thead>
           </table>
         </div>
@@ -89,7 +82,13 @@ include('../../include/head.php');
         </div>
         <button type="button" class="btn btn-danger pull-left m-3"> <a class="text-light" href="newf.php"> Ajouter <i class="fa fa-plus"></i> </a> </button>
       </div>
+      <div class="contenu">
+        <?php
+        include('../../include/aside.php');
+        ?>
+      </div>
     </div>
+    
     <?php
     include('../../include/footer.php');
     ?>

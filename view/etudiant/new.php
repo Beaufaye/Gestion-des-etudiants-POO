@@ -41,7 +41,7 @@ if(isset($_POST['id_etudiant']) and $_POST['nom'] and $_POST['prenom'] and $_POS
 
     <div class="mt-3 pull-right d-flex">  
        
-        <button class="btn btn-info"> <a class="text-light" href="../../index.php"> Deconnexion </a> </button>
+       
     </div>
 
         <div class="bienvenu">AJOUT D'UN ETUDIANT</div>
@@ -314,7 +314,7 @@ if(isset($_POST['id_etudiant']) and $_POST['nom'] and $_POST['prenom'] and $_POS
                         
 
                         <div class="panel-footer mt-3">
-                    <button type="submit" class="btn btn-info pull-left mr-3" >Enregistrer <i class="fa fa-check-square-o ml-2"></i> </button>
+                    <button type="submit" class="btn btn-dark pull-left mr-3" >Enregistrer <i class="fa fa-check-square-o ml-2"></i> </button>
                     <button type="button" class="btn btn-info pull-left"> <a class="text-light" href="list.php"> Fermer <i class="fa fa-close"></i> </a></button>
                 </div>
 

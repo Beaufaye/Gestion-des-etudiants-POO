@@ -33,18 +33,16 @@ if(isset($_POST['id_filiere']) and $_POST['nom_filiere'])
              include('../../include/header.php');
         ?>
 
-        <div class="mt-3 pull-right d-flex">
+     
 
-            <button class="btn btn-info"> <a class="text-light" href="../../index.php"> Deconnexion </a> </button>
-        </div>
-
-        <div class="bienvenu">AJOUT D'UN ETUDIANT</div>
+        <div class="bienvenu">AJOUT D'UNE FILIERE</div>
         <div class="global-content">
             <div class="contenu">
                 <?php
              include('../../include/aside.php');
-        ?>
+            ?>
             </div>
+            
             <div class="cache">
                 <div class="c-table">
                     <div class="bg-danger">

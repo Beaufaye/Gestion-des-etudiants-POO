@@ -36,29 +36,22 @@ include('../../include/head.php');
     include('../../include/header.php');
     ?>
 
-    <div class="mt-3 pull-right d-flex">
-      <button class="btn btn-info"> <a class="text-light" href="../../index.php"> Deconnexion </a> </button>
-    </div>
+    
 
     <div class="bienvenu">LISTE DES ETUDIANTS</div>
     <div class="global-content">
-      <div class="contenu">
-        <?php
-        include('../../include/aside.php');
-        ?>
-      </div>
-      <div class="cache">
-        <div class="tbl-header">
+      <div class="cache ">
+        <div class="tbl-header ">
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
-              <tr>
-              <th scope="col">N°</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Date de naissance</th>
-                <th scope="col">Nationalité</th>
-                <th scope="col">Filière</th>
-                <th scope="col">Niveau</th>
+              <tr class="bg-danger">
+              <th scope="col" class="text-light">N°</th>
+                <th scope="col" class="text-light">Nom</th>
+                <th scope="col" class="text-light">Prénom</th>
+                <th scope="col" class="text-light">Date de naissance</th>
+                <th scope="col" class="text-light">Nationalité</th>
+                <th scope="col" class="text-light">Filière</th>
+                <th scope="col" class="text-light">Niveau</th>
               </tr>
             </thead>
           </table>
@@ -99,6 +92,11 @@ include('../../include/head.php');
           </table>
         </div>
         <button type="button" class="btn btn-danger pull-left m-3"> <a class="text-light" href="new.php"> Ajouter <i class="fa fa-plus"></i> </a> </button>
+      </div>
+      <div class="contenu">
+        <?php
+        include('../../include/aside.php');
+        ?>
       </div>
     </div>
     <?php

@@ -1,11 +1,11 @@
 
 <div class="container ignore" id="banniere">
             <div class="div-1">
-                <img src="font/images/logo armoirie bf.jpg" alt="logo de gauche" class="logo">
+                <img src="font/images/logo armoirie bf.jpg"  class="logo">
             </div>
             
             <div class="welcom">
-                <p>Direction des grandes entreprises</p>
+                <p>Université Thomas SANKARA</p>
             </div>
 
             <div class="div-2">
