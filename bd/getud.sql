@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 22 août 2023 à 10:03
+-- Généré le : jeu. 24 août 2023 à 10:40
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -29,15 +29,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `etudiant` (
   `id_etudiant` int(11) NOT NULL,
-  `id_filiere` int(11) NOT NULL,
-  `id_niveau` int(11) NOT NULL,
   `nom` varchar(254) DEFAULT NULL,
   `prenom` varchar(254) DEFAULT NULL,
   `date_de_naissance` date DEFAULT NULL,
-  `nationalité` varchar(254) DEFAULT NULL,
+  `nationalite` varchar(254) DEFAULT NULL,
   `adresse` varchar(254) DEFAULT NULL,
-  `contact` int(11) DEFAULT NULL
+  `sexe` varchar(255) NOT NULL,
+  `contact` int(11) DEFAULT NULL,
+  `filiere` varchar(255) NOT NULL,
+  `niveau` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `etudiant`
+--
+
+INSERT INTO `etudiant` (`id_etudiant`, `nom`, `prenom`, `date_de_naissance`, `nationalite`, `adresse`, `sexe`, `contact`, `filiere`, `niveau`) VALUES
+(1, 'BAOUROU', 'Beaufaye', '2000-05-26', 'Centrafricaine', 'Wayalghin', 'Masculin', 57208623, 'Informatique de Gestion', 3),
+(2, 'Messi', 'Lionel', '1987-06-24', 'Argentin', 'Miami', 'Masculin', 62784021, 'Football', 3);
 
 -- --------------------------------------------------------
 
@@ -47,8 +56,16 @@ CREATE TABLE `etudiant` (
 
 CREATE TABLE `filiere` (
   `id_filiere` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL
+  `nom_filiere` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `filiere`
+--
+
+INSERT INTO `filiere` (`id_filiere`, `nom_filiere`) VALUES
+(1, 'IG'),
+(2, 'RT');
 
 -- --------------------------------------------------------
 
@@ -60,6 +77,15 @@ CREATE TABLE `niveau_etude` (
   `id_niveau` int(11) NOT NULL,
   `valeur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `niveau_etude`
+--
+
+INSERT INTO `niveau_etude` (`id_niveau`, `valeur`) VALUES
+(1, 1),
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -93,9 +119,7 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `username`, `passw
 -- Index pour la table `etudiant`
 --
 ALTER TABLE `etudiant`
-  ADD PRIMARY KEY (`id_etudiant`),
-  ADD KEY `id_filiere` (`id_filiere`),
-  ADD KEY `id_niveau` (`id_niveau`);
+  ADD PRIMARY KEY (`id_etudiant`);
 
 --
 -- Index pour la table `filiere`
@@ -123,19 +147,19 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `etudiant`
 --
 ALTER TABLE `etudiant`
-  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `filiere`
 --
 ALTER TABLE `filiere`
-  MODIFY `id_filiere` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_filiere` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `niveau_etude`
 --
 ALTER TABLE `niveau_etude`
-  MODIFY `id_niveau` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_niveau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`

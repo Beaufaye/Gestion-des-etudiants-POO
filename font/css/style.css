@@ -166,12 +166,7 @@ thead {
     color: rgb(8, 238, 38);
 }
 
-.champ {
-    border: 0;
-    border-color: #b91010;
-    border-bottom: 2px Solid #b91010;
-    margin-bottom: 20px;
-}
+
 
 form label {
     color: black;
